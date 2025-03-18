@@ -1,0 +1,58 @@
+[
+    {
+      "userId": 1,
+      "holdings": [
+        {
+          "fundId": 1,
+          "qty": 100,
+          "invested": 10000
+        },
+        {
+          "fundId": 3,
+          "qty": 200,
+          "invested": 18000
+        },
+        {
+          "fundId": 2,
+          "qty": 200,
+          "invested": 16000
+        },
+        {
+          "fundId": 4,
+          "qty": 100,
+          "invested": 50000
+        }
+      ]
+    },
+    {
+      "userId": 2,
+      "holdings": [
+        {
+          "fundId": 2,
+          "qty": 200,
+          "invested": 16000
+        },
+        {
+          "fundId": 3,
+          "qty": 150,
+          "invested": 15000
+        }
+      ]
+    },
+    {
+      "userId": 3,
+      "holdings": [
+        {
+          "fundId": 2,
+          "qty": 100,
+          "invested": 8000
+        },
+        {
+          "fundId": 3,
+          "qty": 80,
+          "invested": 4000
+        }
+      ]
+    }
+  ]
+  

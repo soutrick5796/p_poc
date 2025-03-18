@@ -1,0 +1,31 @@
+[
+    {
+      "id": 1,
+      "provider": "TATA Capital",
+      "type": "Bluechip Growth Fund",
+      "nav": 120.50,
+      "details": "A high-growth mutual fund focusing on large-cap stocks."
+    },
+    {
+      "id": 2,
+      "provider": "ICICI Prudential",
+      "type": "Dividend Yield Fund",
+      "nav": 70,
+      "details": "A fund focusing on dividend-paying stocks for steady income."
+    },
+    {
+      "id": 3,
+      "provider": "Quant",
+      "type": "Balanced Hybrid Fund",
+      "nav": 105.20,
+      "details": "A balanced mix of equity and debt instruments."
+    },
+    {
+      "id": 4,
+      "provider": "Invesco",
+      "type": "Contra Fund",
+      "nav": 500,
+      "details": "A high risk instrument with high returns."
+    }
+  ]
+  
