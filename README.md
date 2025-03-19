@@ -1,50 +1,106 @@
-# Welcome to your Expo app 👋
+# Investment Portfolio App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Overview
 
-## Get started
+This project is an **Investment Portfolio** app developed using **React Native** and **Expo**. The app allows users to log in, input their PAN code, and view their investment portfolio, including current values and profits/losses.
 
-1. Install dependencies
+## Pre-requisites
 
-   ```bash
-   npm install
-   ```
+- Install **Android Studio** and **Xcode** for Android and iOS simulators.
+- Follow the steps mentioned in the official [Expo documentation](https://docs.expo.dev/get-started/installation/) for setting up the environment.
 
-2. Start the app
+## Project Setup Steps
 
-   ```bash
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/soutrick5796/p_poc.git
+    ```
+
+2. **Install dependencies**:
+    ```bash
+    npm install
+    ```
+
+3. **Start the app**:
+    ```bash
     npx expo start
-   ```
+    ```
 
-In the output, you'll find options to open the app in a
+    After running the above command, Expo will start the development server, and you will have options to open the app on:
+    - **Android emulator**
+    - **iOS simulator**
+    - **Expo Go** (for testing on a physical device)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+4. **Opening the app**:
+    - You can use **Expo Go** on your phone or an emulator to run the app.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Sample Login Credentials
 
-## Get a fresh project
+You can use the following sample credentials to log in to the app:
 
-When you're ready, run:
+- **Username**: `admin`
+- **Password**: `admin`
 
-```bash
-npm run reset-project
-```
+These credentials allow you to access the home screen, where you can input your PAN code and view your investment portfolio.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Libraries Used
 
-## Learn more
+- **React Native**: Core library for building native apps.
+- **Expo**: Provides tools and libraries for easier React Native development.
+- **Expo Router**: For handling navigation between screens in the app.
+- **React Native Paper**: A UI library that provides Material Design components like buttons, text inputs, etc.
+- **Redux**: For state management of user data (user ID, username, PAN code).
+- **React-Redux**: To connect the app with the Redux store and manage global states.
+- **Snackbar**: To show feedback messages like success or error notifications.
 
-To learn more about developing your project with Expo, look at the following resources:
+## Design Decisions
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- **UI Components**:
+  - The app uses **React Native Paper** for Material Design components like buttons, text fields, and snackbars to provide a clean and modern user interface.
+  - The **portfolio screen** uses a **FlatList** to display investments, which is efficient for rendering large lists of items.
+  - The app highlights profit in **green** and loss in **red**, making it visually easy for users to track the status of their investments.
 
-## Join the community
+- **State Management**:
+  - The app uses **Redux** for managing global state such as user authentication and PAN code.
+  - Actions like **setUser**, **setPanCode**, and **logout** are handled through Redux slices.
 
-Join our community of developers creating universal apps.
+- **Routing**:
+  - The app uses **file-based routing** through **Expo Router**, enabling automatic routing based on file structure.
+  - **useRouter** is used for navigation, and users can navigate between the login, home, and portfolio screens.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- **Optimizations**:
+  - The app uses **`useMemo`** for performance optimization, memoizing expensive computations like the total portfolio value, current value, and investment calculations.
+
+## Snackbar Notifications
+
+The app uses a **Snackbar Context** to manage global snackbars, which provide feedback to users about success or error events.
+
+### SnackbarContext
+
+- **SnackbarProvider** is used to wrap the app and manage the context for snackbars.
+- **showSnackbar** is the method used to display a message on the screen (error, success, etc.).
+- The snackbar appears at the bottom of the screen and automatically hides after 3 seconds.
+
+## Screens
+
+- **Login Screen**:
+  - Users can input their username and password to log in.
+  - Invalid login attempts trigger a snackbar error message.
+  
+- **Home Screen**:
+  - Once logged in, users can input their **PAN Code** and proceed to the portfolio screen.
+  - A logout button is provided to clear the user session and return to the login screen.
+
+- **Portfolio Screen**:
+  - Displays the user’s investments with their details, including the invested amount, quantity, NAV, and current value.
+  - Users can click on individual investments for more details, which are displayed in a styled card.
+  - The total invested and current value of the portfolio are shown at the top, with profit/loss displayed in green/red.
+
+## Resources
+
+- [Expo Documentation](https://docs.expo.dev/)
+- [React Native Documentation](https://reactnative.dev/)
+- [React Navigation Documentation](https://reactnavigation.org/)
+- [React Native Paper Documentation](https://callstack.github.io/react-native-paper/)
+- [Redux Documentation](https://redux.js.org/)
+
